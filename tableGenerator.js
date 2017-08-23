@@ -42,7 +42,7 @@ const createTableArray = tableData => {
 const markupRows = tableArray => {
   tableArray.map(rowData => {
     let rowHTML = document.createElement('tr');
-    rowData.map((element, index, array) => {
+    rowData.map((_, index, array) => {
       let cell = document.createElement('td');
       cell.innerHTML = array[index];
       rowHTML.appendChild(cell);

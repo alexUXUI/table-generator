@@ -1,2 +1,4 @@
-var tableModule = require('./table-generator');
-tableModule();
+var tableModule = require('./tableGenerator');
+var { tableData } = require('./tableData');
+
+tableModule(tableData);

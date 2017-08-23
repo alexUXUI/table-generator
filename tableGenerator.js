@@ -6,7 +6,7 @@
 * It's a program that takes some table data and
 * returns HTML5 table markup:
 *
-* f(tableData) => table<HTML5>
+* f(tableData: [Object]): Unit => table<HTML5>
 *
 * What are the steps to completion?
 *
@@ -35,14 +35,20 @@ const createTableArray = tableData => {
   return Promise.resolve(rows);
 };
 
+/**
+* @TODO this function could and should be broken down into
+* two functions. One to create table rows and their respective table cells.
+* And another to append those rows to the DOM.
+*/
+
 const markupRows = tableArray => {
   tableArray.map(rowArray => {
     let rowHTML = document.createElement('tr');
-    for(let i = 0; i < rowArray.length; i++) {
+    rowArray.map((element, index, array) => {
       let cell = document.createElement('td');
-      cell.innerHTML = rowArray[i];
+      cell.innerHTML = array[index];
       rowHTML.appendChild(cell);
-    }
+    });
     let targetTable = document.body.querySelector('tbody');
     targetTable.appendChild(rowHTML);
   });

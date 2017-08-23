@@ -1,19 +1,19 @@
 
 /**
-* HTML5 table generator algorithm
-* What does it need to do, exactly?
-*
-* It's a program that takes some table data and
-* returns HTML5 table markup:
-*
-* f(tableData: [Object]): Unit => table<HTML5>
-*
-* What are the steps to completion?
-*
-* 1) Create a new HTML5 table, append to DOM @see createHTMLTable()
-* 2) For each object, create a new table row @see createTableArray()
-* 3) for each Object Key, create a new table cell, put in table
-* and append row to table DOM node @see markupRows()
+  * HTML5 table generator algorithm
+  * What does it need to do, exactly?
+  *
+  * It's a program that takes some table data and
+  * returns HTML5 table markup:
+  *
+  * f(tableData: [Object]): Unit => table<HTML5>
+  *
+  * What are the steps to completion?
+  *
+  * 1) Create a new HTML5 table, append to DOM @see createHTMLTable()
+  * 2) For each object, create a new table row @see createTableArray()
+  * 3) for each Object Key, create a new table cell, put in table
+  * and append row to table DOM node @see markupRows()
 */
 
 const createHTMLTable = () => {
@@ -34,9 +34,9 @@ const createTableArray = tableData => {
 };
 
 /**
-* @todo this function could and should be broken down into
-* two functions. One to create table rows and their respective table cells.
-* And another to append those rows to the DOM.
+  * @todo this function could and should be broken down into
+  * two functions. One to create table rows and their respective table cells.
+  * And another to append those rows to the DOM.
 */
 
 const markupRows = tableArray => {
